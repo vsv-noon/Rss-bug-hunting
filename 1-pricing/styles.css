@@ -53,6 +53,9 @@ body {
   padding: 32px 24px;
   width: 280px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .plan--featured {
@@ -104,4 +107,5 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
+  margin-top: auto;
 }
