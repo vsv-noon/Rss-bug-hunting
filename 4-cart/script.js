@@ -35,7 +35,7 @@ function addToCart(id) {
   if (!product) {
     return;
   }
-  const existingProduct = cart.find((item) => item.id === product.id)
+  const existingProduct = cart.find((item) => item.id === product.id);
   if (existingProduct) {
     existingProduct.qty += 1;
   } else {
@@ -57,7 +57,9 @@ function increaseQty(id) {
 
 function decreaseQty(id) {
   const item = cart.find((i) => i.id === id);
-  item.qty--;
+  if (item.qty > 1) {
+    item.qty--;
+  }
   renderCart();
 }
 
