@@ -23,7 +23,9 @@ function getFiltered() {
   const sort = sortSelect.value;
 
   if (search) {
-    result = result.filter((p) => p.name.toLowerCase() == search.toLowerCase());
+    result = result.filter((p) =>
+      p.name.toLowerCase().includes(search.toLowerCase()),
+    );
   }
 
   if (category !== "all") {
@@ -40,7 +42,7 @@ function getFiltered() {
 }
 
 function render() {
-  grid.textContent = '';
+  grid.textContent = "";
   const items = getFiltered();
   items.forEach((p) => {
     const card = document.createElement("div");
