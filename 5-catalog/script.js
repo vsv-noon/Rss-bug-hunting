@@ -40,6 +40,7 @@ function getFiltered() {
 }
 
 function render() {
+  grid.textContent = '';
   const items = getFiltered();
   items.forEach((p) => {
     const card = document.createElement("div");
