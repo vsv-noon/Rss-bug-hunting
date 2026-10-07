@@ -17,7 +17,7 @@ const grid = document.getElementById("grid");
 const countEl = document.getElementById("count");
 
 function getFiltered() {
-  let result = products;
+  let result = [...products];
   const search = searchInput.value;
   const category = categorySelect.value;
   const sort = sortSelect.value;
@@ -32,7 +32,9 @@ function getFiltered() {
     result = products.filter((p) => p.category === category);
   }
 
-  if (sort === "asc") {
+  if (sort === "default") {
+    result;
+  } else if (sort === "asc") {
     result.sort((a, b) => a.price - b.price);
   } else if (sort === "desc") {
     result.sort((a, b) => b.price - a.price);
